@@ -1,4 +1,4 @@
-#if 1
+#if 0
 #include <REGX51.H>
 #include <intrins.h> 
 //unsigned char code byTemp[3]  at 0x23; 
@@ -24,7 +24,7 @@ void main(void)
 }
 #endif
 
-#if 0
+#if 1
 
 #include<reg51.h>
 unsigned char code byTemp[3]_at_ 0x23;

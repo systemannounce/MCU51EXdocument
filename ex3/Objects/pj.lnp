@@ -1,0 +1,3 @@
+".\Objects\main.obj" 
+TO ".\Objects\pj" 
+PRINT(".\Listings\pj.m51")

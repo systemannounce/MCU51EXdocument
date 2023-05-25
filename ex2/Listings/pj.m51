@@ -1,4 +1,4 @@
-BL51 BANKED LINKER/LOCATER V6.22.2.0                                                    04/27/2023  23:09:48  PAGE 1
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                    04/27/2023  23:43:08  PAGE 1
 
 
 BL51 BANKED LINKER/LOCATER V6.22.2.0, INVOKED BY:
@@ -25,9 +25,10 @@ LINK MAP OF MODULE:  .\Objects\pj (MAIN)
 
             * * * * * * *   C O D E   M E M O R Y   * * * * * * *
             CODE    0000H     0003H     ABSOLUTE     
-            CODE    0003H     002FH     UNIT         ?PR?DELAY1S?MAIN
-            CODE    0032H     000EH     UNIT         ?PR?MAIN?MAIN
-            CODE    0040H     000CH     UNIT         ?C_C51STARTUP
+            CODE    0003H     000CH     UNIT         ?C_C51STARTUP
+            CODE    000FH     0009H     UNIT         ?PR?MAIN?MAIN
+                    0018H     000BH                  *** GAP ***
+            CODE    0023H     0003H     ABSOLUTE     
 
 
 
@@ -40,9 +41,6 @@ SEGMENT
 ?C_C51STARTUP
   +--> ?PR?MAIN?MAIN
 
-?PR?MAIN?MAIN
-  +--> ?PR?DELAY1S?MAIN
-
 
 
 SYMBOL TABLE OF MODULE:  .\Objects\pj (MAIN)
@@ -52,42 +50,27 @@ SYMBOL TABLE OF MODULE:  .\Objects\pj (MAIN)
 
   -------         MODULE        MAIN
   C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0080H         PUBLIC        P0
   D:0090H         PUBLIC        P1
-  C:0003H         PUBLIC        Delay1s
-  C:0032H         PUBLIC        main
-  -------         PROC          DELAY1S
-  -------         DO            
-  D:0005H         SYMBOL        a
-  D:0006H         SYMBOL        b
-BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  04/27/2023  23:09:48  PAGE 2
-
-
-  D:0007H         SYMBOL        c
-  -------         ENDDO         
-  C:0003H         LINE#         6
-  C:0003H         LINE#         7
-  C:0003H         LINE#         9
-  C:000FH         LINE#         10
-  C:001BH         LINE#         11
-  C:0030H         LINE#         12
-  C:0031H         LINE#         13
-  -------         ENDPROC       DELAY1S
+  C:000FH         PUBLIC        main
+  C:0023H         PUBLIC        byTemp
   -------         PROC          MAIN
   -------         DO            
-  D:0004H         SYMBOL        byLedValue
+  D:0007H         SYMBOL        byValue
   -------         ENDDO         
-  C:0032H         LINE#         14
-  C:0032H         LINE#         15
-  C:0032H         LINE#         16
-  C:0034H         LINE#         17
-  C:0034H         LINE#         18
-  C:0034H         LINE#         19
-  C:0036H         LINE#         20
-  C:0039H         LINE#         21
-  C:003DH         LINE#         22
-  C:003EH         LINE#         23
+  C:000FH         LINE#         31
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  04/27/2023  23:43:08  PAGE 2
+
+
+  C:000FH         LINE#         32
+  C:000FH         LINE#         34
+  C:000FH         LINE#         35
+  C:000FH         LINE#         36
+  C:0012H         LINE#         37
+  C:0014H         LINE#         38
+  C:0016H         LINE#         39
   -------         ENDPROC       MAIN
   -------         ENDMOD        MAIN
 
-Program Size: data=9.0 xdata=0 code=76
+Program Size: data=9.0 xdata=0 code=27
 LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)
